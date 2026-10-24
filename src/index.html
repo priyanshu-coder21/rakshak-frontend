@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dispatch board – Rakshak</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="board">
+<header class="top"></header>
+<main>
+  <div><h1>In danger or need help?</h1><p>Send a distress call and get a token to track your rescue.</p></div>
+  <form id="distressForm" class="card">
+    <h2>Report distress</h2>
+    <label>What is happening?
+      <textarea name="raw_message" rows="5" required placeholder="Who is hurt, where you are, what you need"></textarea></label>
+    <div class="row">
+          <label>Latitude <input name="latitude" type="number" step="any" min="-90" max="90" value="30.3165" required></label>
+          <label>Longitude <input name="longitude" type="number" step="any" min="-180" max="180" value="78.0322" required></label>
+        </div>
+    <div class="row"><button type="button" id="geo" class="ghost">Use my location</button>
+    <button class="primary">Send distress call</button></div>
+    <div id="reportResult"></div>
+  </form>
+
+<div class="actions">
+  <a class="btn action a-register" href="teams.html">Rescue Teams</a>
+  <button id="runDispatch" class="btn action a-run">Run dispatch</button>
+  <a class="btn action a-track" href="track.html">Track report</a>
+  <a class="btn action a-log" href="logs.html">Dispatch log</a>
+</div>
+
+<div class="stats" id="stats"></div>
+
+<div class="head-row">
+  <h2>All requests</h2>
+  <span class="hint" id="updated"></span>
+  <label>Show <select id="ticketFilter"><option value="all" selected>All</option><option value="Pending">Pending</option><option value="Dispatched">Dispatched</option><option value="Resolved">Resolved</option></select></label>
+</div>
+<div class="tablewrap"><table>
+  <thead><tr><th>Token</th><th>Message</th><th>Severity</th><th>Vulnerability</th><th>Status</th><th>Team</th><th>Dispatched</th><th></th></tr></thead>
+  <tbody id="requestRows"></tbody>
+</table></div>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>

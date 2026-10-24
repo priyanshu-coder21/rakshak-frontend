@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Track report – Rakshak</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="track">
+<header class="top"></header>
+<main class="narrow">
+<form id="trackForm" class="card">
+  <h2>Track a report</h2>
+  <label>Tracking token <input name="token" placeholder="TK-2026-UK-XXXXXX" required></label>
+  <button class="primary">Check status</button>
+  <div id="trackResult"></div>
+</form>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
