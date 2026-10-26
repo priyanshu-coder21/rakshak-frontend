@@ -4,8 +4,8 @@ const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 const state = { tickets: [], teams: [], logs: [] };
 
 // Define System 2's network IP address and port
-// const BACKEND_URL = 'http://172.20.10.3:8000';
-const BACKEND_URL = 'http://localhost:8000';
+const BACKEND_URL = 'http://10.190.38.227:8000';
+// const BACKEND_URL = 'http://localhost:8000';
 
 // Main dashboard filename (change to 'board.html' if your dashboard file is named board.html)
 const DASHBOARD_PAGE = 'index.html';
