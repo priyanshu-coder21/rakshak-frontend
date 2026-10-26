@@ -13,6 +13,12 @@ const DASHBOARD_PAGE = 'index.html';
 
 // API Wrapper with cache-busting to ensure live data
 async function api(path, opts = {}) {
+  // Ensure headers object exists
+  const headers = opts.headers || {};
+  
+  // Add the Ngrok bypass header
+  headers['ngrok-skip-browser-warning'] = 'true';
+  
   let r;
   try { 
     const fetchOpts = { ...opts, cache: 'no-store' }; 
